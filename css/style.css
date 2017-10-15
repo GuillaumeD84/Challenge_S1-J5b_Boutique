@@ -1,0 +1,157 @@
+body {
+	font-family: Raleway;
+	margin-top: 50px;
+}
+
+#container {
+	max-width: 760px;
+	margin: auto;
+}
+
+header {
+	text-align: center;
+	font-weight: bold;
+	/*La position relative décale un élément d'après sa position initiale*/
+	/*position: relative;
+	top: 50px;
+	left: 80px;*/
+	/*position: absolute;*/
+}
+
+h1 {
+	text-transform: uppercase;
+	font-size: 16px;
+	color: gray;
+}
+
+header span {
+	display: block;
+	letter-spacing: 4px;
+	font-size: 2em;
+	color: black;
+	margin: 0;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+main {
+	/*Permet au 'main' de prendre en compte les floats (ici les bottines contenus dans 'article')*/
+	overflow: auto;
+	max-width: 760px;
+	border: 1px solid #555;
+	padding: 2px;
+	text-align: center;
+}
+
+article {
+	text-transform: uppercase;
+	float: left;
+	width: 230px;
+	/*On évite les heights en général car plus compliqué à gérer*/
+	height: 200px;
+	padding: 10px;
+	margin: 10px;
+	box-sizing: border-box;
+	/*On déclare les articles en relative afin de pouvoir positionner les pastilles par la suite*/
+	position: relative;
+}
+
+article:nth-of-type(4) {
+	/*Force le 4ème article, qui est float, à se mettre sur la gauche peut importe si l'élément 1 le gène en hauteur par exemple et donc le forcerai à se déplacer sur une 3ème ligne*/
+	clear: left;
+	/*background-color: yellow;*/
+}
+
+article h2,
+article p {
+	font-size: 12px;
+	margin: 4px 0;
+}
+
+article a {
+	text-decoration: none;
+}
+
+h2,
+article .price {
+	color: #555;
+}
+
+/*On applique ici le style concernant les marques*/
+article .brand {
+	display: inline-block;
+	background-color: red;
+	margin: 0;
+	color: white;
+	padding: 2px 4px;
+}
+
+article:hover {
+	/*Le problème avec les border c'est qu'ils risques de changer la taille de la box*/
+	/*border: 1px solid lightgray;*/
+
+	box-shadow: 0 0 20px dimgray;
+	/*box-shadow: 2px 2px 20px 2px rgba(184,184,184,0.5);*/
+}
+
+article img {
+	display: block;
+	margin: 0 auto;
+	width: 140px;
+}
+
+#borderX {
+	/*On aurait très bien pû mettre une background-image dans le h1 et rajouter un padding pour le décaler vers le haut*/
+	height: 50px;
+	width: 500px;
+	margin: auto;
+    background-image: url("../img/deco.png");
+	/*background-size: 80px;*/
+	/*background-repeat: no-repeat;*/
+	/*repète l'image uniquement dans l'axe X*/
+	background-repeat: repeat-x;
+	/*background-position: top right;*/
+}
+
+/*#borderborder {
+    border: 12px solid transparent;
+    padding: 15px;
+    border-image: url('../img/deco.png') 100% round;
+}*/
+
+article .soldes {
+	text-decoration: line-through;
+}
+
+.product-sale {
+	color: #EEE;
+	background-color: dimgray;
+	border: 2px solid lightgray;
+	width: 3.5em;
+	height: 3.5em;
+	padding: 2px;
+	border-radius: 50%;
+	font-weight: bold;
+	line-height: 3;
+	/*On positionne les pastilles par rapport au plus proche parent non-static c'est à dire 'article' (déclaré en relative)*/
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+
+#sales p {
+	text-decoration: none;
+	color: white;
+	background-color: red;
+	text-transform: uppercase;
+	font-weight: bold;
+	width: 30px;
+	padding: 10px 10px;
+
+	/*Afin de couper les*/
+	word-wrap: break-word;
+
+	position: fixed;
+	top: calc(50% - 62px);
+	border-radius: 0 10px 10px 0;
+}

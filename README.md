@@ -6,7 +6,7 @@ Guillaume DURAND
 Promo : Explorer  
 S1-J5 | 06/10/2017
 
-Type : SSH | SCP
+Type : HTML | CSS
 
 ## Objectif
 Concevoir la page 'sélection' de la boutique d'après l'image ci-dessous.
